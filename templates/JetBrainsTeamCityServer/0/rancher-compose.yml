@@ -1,6 +1,6 @@
 .catalog:
   name: JetBrains TeamCity
-  version: "1"
+  version: 9.1.6
   description: JetBrains TeamCity contineous integration server
   uuid: jetbrains-teamcityserver-1
 

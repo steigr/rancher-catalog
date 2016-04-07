@@ -1,6 +1,6 @@
 .catalog:
   name: JetBrains Upsource
-  version: "1"
+  version: 3.0.4237
   description: JetBrains Upsource code review application
   uuid: jetbrains-stack-1
 

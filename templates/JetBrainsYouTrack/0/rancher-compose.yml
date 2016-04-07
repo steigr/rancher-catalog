@@ -1,6 +1,6 @@
 .catalog:
   name: JetBrains YouTrack
-  version: "1"
+  version: 6.5.17057
   description: JetBrains YouTrack issue tracker
   uuid: jetbrains-youtrack-1
 

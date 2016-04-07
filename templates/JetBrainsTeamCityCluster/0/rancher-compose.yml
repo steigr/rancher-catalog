@@ -1,6 +1,6 @@
 .catalog:
   name: JetBrains TeamCity Server and Agents
-  version: "1"
+  version: 9.1.6
   description: JetBrains TeamCity contineous integration server and agents
   uuid: jetbrains-teamcitycluster-1
 
