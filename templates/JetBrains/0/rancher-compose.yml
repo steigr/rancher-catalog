@@ -14,7 +14,7 @@
   - variable: "DOMAIN"
     label: "DOMAIN"
     description: "Domain name for all apps. After successful startup reach them under hub/youtrack/upsource/teamcity/.$DOMAIN"
-    default: 5000
+    default: example.com
     required: true
     type: "string"
 
