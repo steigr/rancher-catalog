@@ -1,6 +1,6 @@
 .catalog:
   name: "JetBrains Hub"
-  version: "1"
+  version: "1.0.809"
   description: "JetBrains Hub"
   uuid: jetbrains-hub-1
 
