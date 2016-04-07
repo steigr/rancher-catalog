@@ -1,0 +1,5 @@
+Bitbucket:
+  hostname: bitbucket
+  image: steigr/bitbucket:4.4.1
+  volumes:
+  - /data/Atlassian/Bitbucket/volumes/var/atlassian/bitbucket:/var/atlassian/bitbucket
