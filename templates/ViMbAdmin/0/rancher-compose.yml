@@ -17,15 +17,21 @@
   - variable: "DOCTRINE_DRIVER"
     label: "Database driver"
     description: "Database driver"
-    default: mysql
+    default: pdo_mysql
     required: true
     type: "enum"
     options:
-    - mysql
-    - postgresql
-    - sqlite3
-    - mssql
-    - db2
+    - pdo_mysql
+    - pdo_sqlite
+    - pdo_pgsql
+    - pdo_oci
+    - oci8
+    - ibm_db2
+    - pdo_sqlsrv
+    - mysqli
+    - drizzle_pdo_mysql
+    - sqlanywhere
+    - sqlsrv
   - variable: "DOCTRINE_DBNAME"
     label: "Database name"
     description: "Database name"
