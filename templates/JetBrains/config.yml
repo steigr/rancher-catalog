@@ -1,0 +1,11 @@
+name: JetBrains Full Team Stack
+description: |-
+  JetBrains Full Team Stack including:
+  - JetBrains Hub /w Dashboard and Projectwizard
+  - JetBrains YouTrack issue tracker
+  - JetBrains Upsource source code review 
+  - JetBrains TeamCity ci/cd services
+  - thress JetBrains TeamCity-Agents
+  - Application-Router
+version: 1
+category: Applications
