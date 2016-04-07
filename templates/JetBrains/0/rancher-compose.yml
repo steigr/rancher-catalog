@@ -1,19 +1,12 @@
 .catalog:
   name: "JetBrains Full Team Stack"
   version: "1"
-  description: |-
-    JetBrains Full Team Stack including:
-    - JetBrains Hub /w Dashboard and Projectwizard
-    - JetBrains YouTrack issue tracker
-    - JetBrains Upsource source code review 
-    - JetBrains TeamCity ci/cd services
-    - thress JetBrains TeamCity-Agents
-    - Application-Router
+  description: "JetBrains Team Apps: Hub, YouTrack, Upsource, and TeamCity with agents"
   uuid: jetbrains-stack-1
   questions: 
   - variable: "DOMAIN"
     label: "DOMAIN"
-    description: "Domain name for all apps. After successful startup reach them under hub/youtrack/upsource/teamcity/.$DOMAIN"
+    description: "Domain name for all apps. After successful startup reach them under hub.$DOMAIN youtrack.$DOMAIN upsource.$DOMAIN teamcity.$DOMAIN"
     default: example.com
     required: true
     type: "string"
