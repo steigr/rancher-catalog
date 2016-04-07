@@ -4,6 +4,16 @@
   version: 3.0.14
   uuid: opensolutions-vimbadmin-0
   questions: 
+  - variable: "DATABASE_CONTAINER_NAME"
+    label: "Database Server Container"
+    description: "Database Server Container"
+    type: "string"
+    default: Default/mysql
+  - variable: "DOCTRINE_HOST"
+    label: "Database Server or IP"
+    description: "Database Server or IP"
+    type: "string"
+    default: database
   - variable: "DOCTRINE_DRIVER"
     label: "Database driver"
     description: "Database driver"
@@ -30,11 +40,6 @@
     label: "Database password"
     description: "Database password"
     type: "password"
-  - variable: "DOCTRINE_HOST"
-    label: "Database Server or IP"
-    description: "Database Server or IP"
-    type: "string"
-    default: database
   - variable: "VIMBADMIN_PATH"
     label: "Path"
     description: "Path of ViMbAdmin Application"
