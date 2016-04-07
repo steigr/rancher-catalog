@@ -1,0 +1,84 @@
+.catalog:
+  name: ViMbAdmin
+  description: ViMbAdmin Mailbox Administration Webapp
+  version: 3.0.14
+  uuid: opensolutions-vimbadmin-0
+  questions: 
+  - variable: "DOCTRINE_DRIVER"
+    label: "Database driver"
+    description: "Database driver"
+    default: mysql
+    required: true
+    type: "enum"
+    options:
+    - mysql
+    - postgresql
+    - sqlite3
+    - mssql
+    - db2
+  - variable: "DOCTRINE_DBNAME"
+    label: "Database name"
+    description: "Database name"
+    default: vimbadmin
+    type: "string"
+  - variable: "DOCTRINE_USER"
+    label: "Database username"
+    description: "Database username"
+    default: vimbadmin
+    type: "string"
+  - variable: "DOCTRINE_PASSWORD"
+    label: "Database password"
+    description: "Database password"
+    type: "password"
+  - variable: "DOCTRINE_HOST"
+    label: "Database Server or IP"
+    description: "Database Server or IP"
+    type: "string"
+    default: database
+  - variable: "VIMBADMIN_PATH"
+    label: "Path"
+    description: "Path of ViMbAdmin Application"
+    type: "string"
+    default: /
+  - variable: "ADMIN_EMAIL"
+    label: "eMail"
+    description: "Mail Administrator eMail Address"
+    type: "string"
+    default: admin@example.com
+    required: true
+  - variable: "ADMIN_PASSWORD"
+    label: "Password"
+    description: "Mail Administrator password"
+    type: "password"
+    default: vimbadmin
+    required: true
+  - variable: "SERVER_NAME"
+    label: "Server Base URL"
+    description: "Base-URL of ViMbAdmin Application, prepend https:// if app should run secured"
+    type: "string"
+    default: http://vimbadmin.example.com
+    required: true
+
+ViMbAdmin:
+  scale: 1
+  health_check:
+    port: 80
+    interval: 2000
+    recreate_on_quorum_strategy_config:
+      quorum: 1
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    strategy: recreateOnQuorum
+    response_timeout: 2000
+    request_line: GET "/" "HTTP/1.0"
+    healthy_threshold: 2
+  metadata:
+    doctrine.driver: ${DOCTRINE_DRIVER}
+    doctrine.dbname: ${DOCTRINE_DBNAME}
+    doctrine.user: ${DOCTRINE_USER}
+    doctrine.password: ${DOCTRINE_PASSWORD}
+    doctrine.host: ${DOCTRINE_HOST}
+    vimbadmin.path: ${VIMBADMIN_PATH}
+    admin.email: ${ADMIN_EMAIL}
+    admin.password: ${ADMIN_PASSWORD}
+    server.name: ${SERVER_NAME}
