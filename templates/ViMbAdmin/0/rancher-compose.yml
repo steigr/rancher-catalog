@@ -81,7 +81,7 @@ ViMbAdmin:
     unhealthy_threshold: 3
     strategy: recreateOnQuorum
     response_timeout: 2000
-    request_line: GET "/" "HTTP/1.0"
+    request_line: GET "${VIMBADMIN_PATH}" "HTTP/1.0"
     healthy_threshold: 2
   metadata:
     doctrine.driver: ${DOCTRINE_DRIVER}
