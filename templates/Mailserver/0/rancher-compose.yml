@@ -34,11 +34,16 @@
     required: false
     type: "password"
   - variable: "PROXY_PROTOCOL_ENABLE"
-    lable: "PROXY-Protocol"
+    label: "PROXY-Protocol"
     description: "Enable Services with PROXY-Protocol Encapsulation"
     required: true
     default: "true"
     type: "boolean"
+  - variable: "PROXY_PROTOCOL_OFFSET"
+    label: "PROXY-Protocol Port Offset"
+    description: "Offset of PROXY-Protocol-Services, with '10000' SMTP /w PROXY is reachable under 10025"
+    required: false
+    type: "int"
 
 Server:
   scale: 1
