@@ -33,6 +33,12 @@
     label: "Database Password"
     required: false
     type: "password"
+  - variable: "PROXY_PROTOCOL_ENABLE"
+    lable: "PROXY-Protocol"
+    description: "Enable Services with PROXY-Protocol Encapsulation"
+    required: true
+    default: "true"
+    type: "boolean"
 
 Server:
   scale: 1
