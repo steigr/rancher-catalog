@@ -10,6 +10,17 @@
     default: example.com
     required: true
     type: "string"
+  - variable: "MAILBOX_CONTAINER"
+    label: "Mailbox Container"
+    description: "The Mailbox-Container must run lmtpd service."
+    required: true
+    type: "service"
+  - variable: "MAILBOX_HOST"
+    label: "Mailbox Server Name"
+    description: "The name under which the mailbox container is reached."
+    required: true
+    type: "string"
+    default: "mailbox-deliver"
   - variable: "DATABASE_DRIVER"
     label: "Database Type"
     default: ""
@@ -90,3 +101,4 @@ Server:
     gr.stei.mailserver.database.name: ${DATABASE_NAME}
     gr.stei.mailserver.proxy.enable: ${PROXY_PROTOCOL_ENABLE}
     gr.stei.mailserver.proxy.offset: ${PROXY_PROTOCOL_OFFSET}
+    gr.stei.mailserver.deliver.host: ${MAILBOX_HOST}
