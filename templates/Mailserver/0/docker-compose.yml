@@ -1,6 +1,2 @@
 Server:
   image: steigr/postfix:3.1.0
-  expose:
-  - 25
-  - 465
-  - 587
