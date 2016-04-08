@@ -24,6 +24,10 @@
     label: "Database Server"
     required: false
     type: "service"
+  - variable: "DATABASE_NAME"
+    label: "Database Name"
+    required: false
+    type: "string"
   - variable: "DATABASE_USER"
     label: "Database User"
     default: postfix
@@ -44,6 +48,18 @@
     description: "Offset of PROXY-Protocol-Services, with '10000' SMTP /w PROXY is reachable under 10025"
     required: false
     type: "int"
+  - variable: "SSL_CERTIFICATE_KEY"
+    label: "SSL Private Key"
+    required: false
+    type: "multiline"
+  - variable: "SSL_CERTIFICATE"
+    label: "SSL Certificate"
+    required: false
+    type: "multiline"
+  - variable: "SSL_CERTIFICATE_CHAIN"
+    label: "SSL Certificate Chain"
+    required: false
+    type: "multiline"
 
 Server:
   scale: 1
