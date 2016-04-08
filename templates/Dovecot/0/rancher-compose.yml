@@ -10,15 +10,20 @@
     default: example.com
     required: true
     type: "string"
+  - variable: "WITH_POP3"
+    label: "Enable POP3(s)"
+    description: "Enable POP3(s) protocol"
+    default:  "false"
+    type: "boolean"
   - variable: "WITH_SIEVE"
     label: "Enable SIEVE"
     description: "Enable sieve protocol"
     default:  "true"
     type: "boolean"
-  - variable: "WITH_POP3"
-    label: "Enable POP3(s)"
-    description: "Enable POP3(s) protocol"
-    default:  "false"
+  - variable: "WITH_IMAP"
+    label: "Enable IMAPS(s)"
+    description: "Enable IMAP(s) protocol"
+    default:  "true"
     type: "boolean"
   - variable: "DATABASE_DRIVER"
     label: "Database Type"
@@ -117,6 +122,7 @@ Server:
     healthy_threshold: 2
   metadata:
     gr.stei.dovecot.domain: ${DOMAIN}
+    gr.stei.dovecot.imap.enable: ${WITH_IMAP}
     gr.stei.dovecot.sive.enable: ${WITH_SIEVE}
     gr.stei.dovecot.pop3.enable: ${WITH_POP3}
     gr.stei.dovecot.global.ssl.certificate: ${SSL_CERTIFICATE}
