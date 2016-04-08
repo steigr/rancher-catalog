@@ -1,8 +1,8 @@
 .catalog:
-  name: "Mailserver"
-  version: "3.1.0"
-  description: "Mailserver with Anti-Spam"
-  uuid: mailserver-server-0
+  name: Dovecot
+  version: 2.2.22
+  description: Dovecot IMAP, POP3, and Sieve Server
+  uuid: dovecot-server-0
   questions: 
   - variable: "DOMAIN"
     label: "Domain"
