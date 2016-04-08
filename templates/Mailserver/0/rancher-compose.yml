@@ -20,6 +20,10 @@
     - postgres
     - mysql
     - sqlite3
+  - variable: "DATABASE_HOST"
+    label: "Database Server"
+    required: false
+    type: "service"
   - variable: "DATABASE_USER"
     label: "Database User"
     default: postfix
