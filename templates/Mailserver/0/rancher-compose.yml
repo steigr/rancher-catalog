@@ -48,6 +48,16 @@
       description: Database Name
       type: string
       default: postfix
+    - variable: PROXY_PROTOCOL_ENABLE
+      label: Enable Proxy-Protocol
+      description: Enable Proxy-Protocol
+      type: boolean
+      default: false
+    - variable: PROXY_PROTOCOL_OFFSET
+      label: Offset
+      description: Offset of proxied services
+      type: int
+      default: 20000
 Server:
   scale: 1
   health_check:
@@ -70,3 +80,5 @@ Server:
     gr.stei.mailserver.database.user: ${DATABASE_USER}
     gr.stei.mailserver.database.password: ${DATABASE_PASSWORD}
     gr.stei.mailserver.database.name: ${DATABASE_NAME}
+    gr.stei.mailserver.proxy.enable: ${PROXY_PROTOCOL_ENABLE}
+    gr.stei.mailserver.proxy.offset: ${PROXY_PROTOCOL_OFFSET}
