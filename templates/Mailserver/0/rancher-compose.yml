@@ -5,9 +5,14 @@
   uuid: mailserver-server-0
   questions: 
   - variable: "DOMAIN"
-    label: "DOMAIN"
+    label: "Domain"
     description: "Primary Domain of Mailserver"
     default: example.com
+    required: true
+    type: "string"
+  - variable: "DATABASE_USER"
+    label: "Database User"
+    default: postfix
     required: true
     type: "string"
 
