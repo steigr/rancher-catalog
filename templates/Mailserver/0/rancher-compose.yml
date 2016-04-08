@@ -4,11 +4,13 @@
   version: 3.1.0
   uuid: mailserver-server-0
   questions:
-  - variable: DOMAIN
+  questions: 
+  - variable: "DOMAIN"
     label: Domain
-    description: Primary Domain
-    type: string
+    description: Primary Mailserver Domain
     default: example.com
+    required: true
+    type: "string"
 
 Server:
   scale: 1
