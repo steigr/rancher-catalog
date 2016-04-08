@@ -1,13 +1,13 @@
-.catalog
-  name: Mailserver
-  description: Mailserver based on Postfix 3, Amavisd-NG
-  version: 3.1.0
+.catalog:
+  name: "Mailserver"
+  version: "3.1.0"
+  description: "Mailserver with Anti-Spam"
   uuid: mailserver-server-0
-  questions:
+  questions: 
   - variable: "DOMAIN"
-    label: "Domain"
-    description: "Primary Mailserver Domain"
-    default: "example.com"
+    label: "DOMAIN"
+    description: "Primary Domain of Mailserver"
+    default: example.com
     required: true
     type: "string"
 
