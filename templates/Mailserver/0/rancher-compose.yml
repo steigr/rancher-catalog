@@ -20,10 +20,15 @@
     - postgres
     - mysql
     - sqlite3
+  - variable: "DATABASE_CONTAINER"
+    label: "Database Contaier"
+    required: false
+    type: "service"
   - variable: "DATABASE_HOST"
     label: "Database Server"
     required: false
-    type: "service"
+    type: "string"
+    default: "database-server"
   - variable: "DATABASE_NAME"
     label: "Database Name"
     required: false

@@ -1,2 +1,4 @@
 Server:
   image: steigr/postfix:3.1.0
+  external_links:
+  - ${DATABASE_CONTAINER}:${DATABASE_HOST}
