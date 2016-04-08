@@ -10,11 +10,25 @@
     default: example.com
     required: true
     type: "string"
+  - variable: "DATABASE_DRIVER"
+    label: "Database Type"
+    default: ""
+    required: false
+    type: "enum"
+    options:
+    - ""
+    - postgres
+    - mysql
+    - sqlite3
   - variable: "DATABASE_USER"
     label: "Database User"
     default: postfix
-    required: true
+    required: false
     type: "string"
+  - variable: "DATABASE_PASSWORD"
+    label: "Database Password"
+    required: false
+    type: "password"
 
 Server:
   scale: 1
