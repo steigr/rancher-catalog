@@ -1,3 +1,15 @@
+.catalog
+  name: Mailserver
+  description: Mailserver based on Postfix 3, Amavisd-NG
+  version: 3.1.0
+  uuid: mailserver-server-0
+  questions:
+  - variable: DOMAIN
+    label: Domain
+    description: Primary Domain
+    type: string
+    default: example.com
+
 Server:
   scale: 1
   health_check:
