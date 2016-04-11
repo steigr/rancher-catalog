@@ -1,3 +1,27 @@
+.catalog:
+  name: Discourse
+  version: 1.6.0
+  description: Messageboard
+  uuid: discourse-discourse-0
+  questions: 
+  - variable: "ORGANIZATION"
+    label: "Orrganization"
+    description: "Name your organization"
+    default: ACME Inc.
+    required: true
+    type: "string"
+  - variable: "DISCOURSE_DEVELOPER_EMAILS"
+    label: "Setup User eMail"
+    description: "Name your organization"
+    default: postmaster@example.com
+    required: true
+    type: "string"
+  - variable: "DISCOURSE_SMTP_ADDRESS"
+    label: "Discourse-From-Address"
+    description: "Name your organization"
+    default: discourse@example.com
+    required: true
+    type: "string"
 Redis:
   scale: 1
   health_check:
@@ -23,7 +47,7 @@ Discourse:
     unhealthy_threshold: 3
     strategy: recreateOnQuorum
     request_line: GET "/" "HTTP/1.0"
-    healthy_threshold: 2
+    healthy_threshold: 2  
     response_timeout: 2000
 PostgresSQL:
   scale: 1

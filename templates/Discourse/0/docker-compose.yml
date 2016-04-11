@@ -16,11 +16,11 @@ Discourse:
   - Mailserver:mailserver
   - Redis:redis
   volumes:
-  - /data/${STACK_NAME}/Discourse/volumes/opt/discourse/public/assets:/opt/discourse/public/assets
-  - /data/${STACK_NAME}/Discourse/volumes/opt/discourse/public/uploads:/opt/discourse/public/uploads
+  - /data/${ORGANIZATION}/Discourse/volumes/opt/discourse/public/assets:/opt/discourse/public/assets
+  - /data/${ORGANIZATION}/Discourse/volumes/opt/discourse/public/uploads:/opt/discourse/public/uploads
 PostgresSQL:
   environment:
     POSTGRES_PASSWORD: discourse
   image: postgres
   volumes:
-  - /data/${STACK_NAME}/PostgresSQL/volumes/var/lib/postgresql/data:/var/lib/postgresql/data
+  - /data/${ORGANIZATION}/PostgresSQL/volumes/var/lib/postgresql/data:/var/lib/postgresql/data
