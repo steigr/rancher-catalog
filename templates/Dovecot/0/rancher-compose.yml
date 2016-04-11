@@ -1,6 +1,6 @@
 .catalog:
   name: Dovecot
-  version: 2.2.22
+  version: 2.2.23
   description: Dovecot IMAP, POP3, and Sieve Server
   uuid: dovecot-server-0
   questions: 
