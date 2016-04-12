@@ -16,12 +16,6 @@
     default: postmaster@example.com
     required: true
     type: "string"
-  - variable: "DISCOURSE_SMTP_ADDRESS"
-    label: "Discourse-From-Address"
-    description: "Name your organization"
-    default: discourse@example.com
-    required: true
-    type: "string"
   - variable: "DISCOURSE_DB_PASSWORD"
     label: "Password of Discource PostgreSQL User"
     description: "Password of Discource PostgreSQL User"

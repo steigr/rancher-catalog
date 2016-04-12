@@ -9,7 +9,7 @@ Mailserver:
 Discourse:
   environment:
     DISCOURSE_DB_PASSWORD: ${DISCOURSE_DB_PASSWORD}
-    DISCOURSE_SMTP_ADDRESS: ${DISCOURSE_SMTP_ADDRESS}
+    DISCOURSE_SMTP_ADDRESS: mailserver
     DISCOURSE_DEVELOPER_EMAILS: ${DISCOURSE_DEVELOPER_EMAILS}
     DISCOURSE_SERVE_STATIC_ASSETS: 'true'
   image: envygeeks/discourse
@@ -18,7 +18,6 @@ Discourse:
   - PostgresSQL:postgresql
   - Redis:redis
   volumes:
-  - /data/${ORGANIZATION}/Discourse/volumes/opt/discourse/public/assets:/opt/discourse/public/assets
   - /data/${ORGANIZATION}/Discourse/volumes/opt/discourse/public/uploads:/opt/discourse/public/uploads
 PostgresSQL:
   environment:
