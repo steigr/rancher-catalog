@@ -72,7 +72,17 @@
   - variable: "MAIL_LOCATION"
     label: "Mailbox Location"
     type: "string"
-    default: maildir:/var/vmail/mailbox/%d/%u/Maildir
+    default: maildir:/srv/vmail/%d/%u/mail:LAYOUT=fs
+    required: true
+  - variable: "MAILBOX_UID"
+    label: "Mailbox Owner UID"
+    type: "int"
+    default: 2000
+    required: true
+  - variable: "MAILBOX_GID"
+    label: "Mailbox Owner GID"
+    type: "int"
+    default: 2000
     required: true
   - variable: "PASSWORD_SCHEME"
     label: "Password Crypt Scheme"
