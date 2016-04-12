@@ -1,19 +1,21 @@
 Redis:
   image: redis
+
 Mailserver:
   tty: true
   image: ubuntu:14.04.3
   stdin_open: true
+
 Discourse:
   environment:
-    DISCOURSE_DB_PASSWORD: discourse
-    DISCOURSE_SMTP_ADDRESS: board@ascii.coffee
-    DISCOURSE_DEVELOPER_EMAILS: postmaster@ascii.coffee
+    DISCOURSE_DB_PASSWORD: ${DISCOURSE_DB_PASSWORD}
+    DISCOURSE_SMTP_ADDRESS: ${DISCOURSE_SMTP_ADDRESS}
+    DISCOURSE_DEVELOPER_EMAILS: ${DISCOURSE_DEVELOPER_EMAILS}
     DISCOURSE_SERVE_STATIC_ASSETS: 'true'
   image: envygeeks/discourse
   links:
-  - PostgresSQL:postgresql
   - Mailserver:mailserver
+  - PostgresSQL:postgresql
   - Redis:redis
   volumes:
   - /data/${ORGANIZATION}/Discourse/volumes/opt/discourse/public/assets:/opt/discourse/public/assets
@@ -21,6 +23,9 @@ Discourse:
 PostgresSQL:
   environment:
     POSTGRES_PASSWORD: discourse
-  image: postgres
+    INIT_USER: discourse:login:${DISCOURSE_DB_PASSWORD}
+    INIT_DB: discourse::hstore,pg_trgm
+    INIT_DEBUG: 'true'
+  image: steigr/postgres
   volumes:
   - /data/${ORGANIZATION}/PostgresSQL/volumes/var/lib/postgresql/data:/var/lib/postgresql/data
