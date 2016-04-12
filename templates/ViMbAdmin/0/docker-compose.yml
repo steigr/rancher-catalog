@@ -1,6 +1,6 @@
 ViMbAdmin:
   hostname: vimbadmin
-  image: steigr/vimbadmin:3.0.14
+  image: steigr/vimbadmin:3.0.15
   expose:
   - "80"
   external_links:

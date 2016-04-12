@@ -1,7 +1,7 @@
 .catalog:
   name: ViMbAdmin
   description: ViMbAdmin Mailbox Administration Webapp
-  version: 3.0.14
+  version: 3.0.15
   uuid: opensolutions-vimbadmin-0
   questions: 
   - variable: "DATABASE_CONTAINER_NAME"
@@ -69,7 +69,53 @@
     type: "string"
     default: http://vimbadmin.example.com
     required: true
-
+  - variable: "MAIL_LOCATION"
+    label: "Mailbox Location"
+    type: "string"
+    default: maildir:/var/vmail/mailbox/%d/%u/Maildir
+    required: true
+  - variable: "PASSWORD_SCHEME"
+    label: "Password Crypt Scheme"
+    type: "enum"
+    default: "dovecot:BLF-CRYPT"
+    options:
+    - dovecot:MD5
+    - dovecot:MD5-CRYPT
+    - dovecot:SHA
+    - dovecot:SHA1
+    - dovecot:SHA256
+    - dovecot:SHA512
+    - dovecot:SMD5
+    - dovecot:SSHA
+    - dovecot:SSHA256
+    - dovecot:SSHA512
+    - dovecot:PLAIN
+    - dovecot:CLEAR
+    - dovecot:CLEARTEXT
+    - dovecot:PLAIN-TRUNC
+    - dovecot:CRAM-MD5
+    - dovecot:SCRAM-SHA-1
+    - dovecot:HMAC-MD5
+    - dovecot:DIGEST-MD5
+    - dovecot:PLAIN-MD4
+    - dovecot:PLAIN-MD5
+    - dovecot:LDAP-MD5
+    - dovecot:LANMAN
+    - dovecot:NTLM
+    - dovecot:OTP
+    - dovecot:SKEY
+    - dovecot:RPA
+    - dovecot:CRYPT
+    - dovecot:BLF-CRYPT
+    - dovecot:SHA512-CRYPT
+    - dovecot:SHA256-CRYPT
+    - plain
+    - md5
+    - md5.salted
+    - crypt
+    - md5.crypt
+    - sha1
+    - sha1.salted
 ViMbAdmin:
   scale: 1
   health_check:
@@ -93,3 +139,5 @@ ViMbAdmin:
     admin.email: ${ADMIN_EMAIL}
     admin.password: ${ADMIN_PASSWORD}
     server.name: ${SERVER_NAME}
+    mail.location: ${MAIL_LOCATION}
+    password.scheme: ${PASSWORD_SCHEME}
