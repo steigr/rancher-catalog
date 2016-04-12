@@ -68,6 +68,11 @@
     description: "Offset of PROXY-Protocol-Services, with '10000' IMAP /w PROXY is reachable under 10143"
     required: false
     type: "int"
+  - variable: "PROXY_TRUSTED_NETWORKS"
+    label: "PROXY-Protocol Trusted Networks"
+    required: false
+    type: "string"
+    default: "10.42.0.0/16"
   - variable: "SSL_CERTIFICATE_KEY"
     label: "SSL Private Key"
     required: false
@@ -135,6 +140,7 @@ Server:
     gr.stei.dovecot.database.name: ${DATABASE_NAME}
     gr.stei.dovecot.proxy.enable: ${PROXY_PROTOCOL_ENABLE}
     gr.stei.dovecot.proxy.offset: ${PROXY_PROTOCOL_OFFSET}
+    gr.stei.dovecot.proxy.trusted.networks: ${PROXY_TRUSTED_NETWORKS}
     gr.stei.dovecot.smtp.relay.host: ${SMTP_RELAY_HOST}
     gr.stei.dovecot.smtp.relay.name: ${SMTP_RELAY_NAME}
     gr.stei.dovecot.smtp.relay.auth: ${SMTP_RELAY_AUTH_ENABLED}
