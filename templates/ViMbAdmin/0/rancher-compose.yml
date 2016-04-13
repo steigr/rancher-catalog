@@ -7,8 +7,8 @@
   - variable: "DATABASE_CONTAINER_NAME"
     label: "Database Server Container"
     description: "Database Server Container"
-    type: "string"
-    default: Default/mysql
+    required: true
+    type: "service"
   - variable: "DOCTRINE_HOST"
     label: "Database Server or IP"
     description: "Database Server or IP"
@@ -151,3 +151,13 @@ ViMbAdmin:
     server.name: ${SERVER_NAME}
     mail.location: ${MAIL_LOCATION}
     password.scheme: ${PASSWORD_SCHEME}
+Mailserver:
+  scale: 1
+  health_check:
+    port: 25
+    interval: 2000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    strategy: recreate
+    healthy_threshold: 2
+    response_timeout: 2000

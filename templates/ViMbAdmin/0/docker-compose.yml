@@ -5,3 +5,8 @@ ViMbAdmin:
   - "80"
   external_links:
   - ${DATABASE_CONTAINER_NAME}:${DOCTRINE_HOST}
+  links:
+  - Mailserver:mailserver
+Mailserver:
+  hostname: mailserver
+  image: steigr/mailout:1
